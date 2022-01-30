@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.videoListFragment.VideoListFragment"
+    >
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/idTopAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:menu="@menu/top_app_bar"
+            app:title="Fast Player"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        >
+        <com.google.android.material.chip.ChipGroup
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:id="@+id/idMediaFilterChipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:scrollbars="none"
+            app:singleSelection="true"
+            android:layout_gravity="center_vertical"
+            >
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="All"
+                android:focusedByDefault="true"
+                />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Latest Added"
+                />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="By Name"
+                />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="By Duration"
+                />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="By Size"
+                />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+    <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+        android:id="@+id/idVideoRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="95dp"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

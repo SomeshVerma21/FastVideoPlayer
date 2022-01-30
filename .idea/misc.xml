@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout-v26/fragment_video_list.xml" value="0.25" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/activity_main.xml" value="0.12" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/activity_player.xml" value="0.152" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/exo_player_controller.xml" value="0.152" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/fragment_player.xml" value="0.25416666666666665" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/fragment_video_list.xml" value="0.2" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/video_items.xml" value="0.2" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/menu/top_app_bar.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

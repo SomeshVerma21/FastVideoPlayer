@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="clickListener"
+            type="com.vermaji.fastvideoplayer.fragments.adapters.MediaClickListener"
+            />
+        <variable
+            name="videoData"
+            type="com.vermaji.fastvideoplayer.media.VideoProperty" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:onClick="@{()->clickListener.onClick(videoData.uri)}"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView"
+                android:scaleType="centerCrop"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                app:circularflow_defaultRadius="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/idMediaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:padding="5dp"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@{videoData.title}"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/idMediaDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                android:text="@{videoData.duration}"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
