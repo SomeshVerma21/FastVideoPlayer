@@ -15,7 +15,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.chip.ChipGroup
 import com.vermaji.fastvideoplayer.PlayerActivity
+import com.vermaji.fastvideoplayer.R
 import com.vermaji.fastvideoplayer.databinding.FragmentVideoListBinding
 import com.vermaji.fastvideoplayer.fragments.adapters.MediaClickListener
 import com.vermaji.fastvideoplayer.fragments.adapters.VideoItemAdapter
@@ -25,6 +27,7 @@ class VideoListFragment : Fragment() {
     private val REQUEST_CODE =1001
     private val PERMISSIONS = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
     private lateinit var viewModel: VideoListModel
+    private lateinit var filterChipGroup:ChipGroup
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -34,7 +37,31 @@ class VideoListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val application = requireNotNull(this.activity).application
+        filterChipGroup = view.findViewById(R.id.idMediaFilterChipGroup)
+        filterChipGroup.setOnCheckedChangeListener(ChipGroup.OnCheckedChangeListener { group, checkedId ->
+            when(checkedId){
+                R.id.idFilterAllMedia ->{
+                    Toast.makeText(requireContext(),"All Media",Toast.LENGTH_SHORT).show()
+                    viewModel.getData("all")
+                }
+                R.id.idFilterByDuration ->{
+                    Toast.makeText(requireContext(),"By Duration",Toast.LENGTH_SHORT).show()
+                    viewModel.getData("duration")
+                }
+                R.id.idFilterByName ->{
+                    Toast.makeText(requireContext(),"By Name",Toast.LENGTH_SHORT).show()
+                    viewModel.getData("name")
+                }
+                R.id.idFilterLatestAdded ->{
+                    Toast.makeText(requireContext(),"Latest Added",Toast.LENGTH_SHORT).show()
+                    viewModel.getData("latest")
+                }
+                R.id.idFilterBySize ->{
+                    Toast.makeText(requireContext(),"By Size",Toast.LENGTH_SHORT).show()
+                    viewModel.getData("size")
+                }
+            }
+        })
         val viewModelFactory = ViewModelFactory(activity?.contentResolver)
         viewModel = ViewModelProvider(this,viewModelFactory).get(VideoListModel::class.java)
         viewModel.videoList.observe(viewLifecycleOwner, Observer {
@@ -59,7 +86,7 @@ class VideoListFragment : Fragment() {
         }
     }
     private fun loadMedia(){
-        viewModel.getData()
+        viewModel.getData("All")
     }
 
     override fun onStart() {

@@ -20,7 +20,6 @@ import com.vermaji.fastvideoplayer.databinding.ActivityPlayerBinding
 
 class PlayerActivity : AppCompatActivity() {
     private lateinit var binding:ActivityPlayerBinding
-    private lateinit var mediaSession:MediaSessionCompat
     private var player:SimpleExoPlayer? =null
 
     private var mediaUri:String? = null

@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupUI()
     {
         supportFragmentManager.beginTransaction()
-            .add(R.id.idMainActivityContainer,VideoListFragment())
+            .replace(R.id.idMainActivityContainer,VideoListFragment())
             .commitNow()
     }
 }

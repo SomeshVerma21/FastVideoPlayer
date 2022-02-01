@@ -2,15 +2,22 @@
     <!-- Base application theme. -->
     <style name="Theme.FastVideoPlayer" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#66B7E8</item>
-        <item name="colorPrimaryVariant">#66B7E8</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVarient</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#2AA196</item>
-        <item name="colorSecondaryVariant">#2AA196</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryVarient</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ChipsTheme" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/choice_chip_selector</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/chip_text_selector_color</item>
     </style>
 </resources>

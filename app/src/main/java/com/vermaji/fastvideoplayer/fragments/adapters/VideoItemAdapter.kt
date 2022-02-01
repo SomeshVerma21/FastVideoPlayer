@@ -28,7 +28,7 @@ class VideoItemAdapter(private val list: MutableList<VideoProperty>,private val 
         fun bind(item: VideoProperty,clickListener: MediaClickListener) {
             binding.videoData = item
             val imageView = binding.imageView
-            Glide.with(imageView.context).load(item.uri).placeholder(R.drawable.ic_player_icon).into(imageView)
+            Glide.with(imageView.context).load(item.uri).placeholder(R.drawable.app_icon_312px).into(imageView)
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }

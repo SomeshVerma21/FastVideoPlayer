@@ -20,7 +20,7 @@ class VideoListModel(private val contentResolver: ContentResolver?) : ViewModel(
     val videoList:LiveData<MutableList<VideoProperty>>
         get() = _videoList
 
-    fun getData() {
+    fun getData(filterBy:String) {
         Log.i("view model","view Model called ")
         loadMedia()
     }
@@ -59,7 +59,7 @@ class VideoListModel(private val contentResolver: ContentResolver?) : ViewModel(
                 val durationColumn =
                     cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DURATION)
                 val sizeColumn = cursor.getColumnIndexOrThrow(MediaStore.Video.Media.SIZE)
-                Log.i("view Model","cursor called size = ${cursor.count.toString()}")
+                Log.i("view Model","cursor called size = ${cursor.count}")
                 while (cursor.moveToNext())
                 {
                     val id = cursor.getLong(idColumn)
