@@ -14,14 +14,36 @@ import com.vermaji.fastvideoplayer.media.VideoProperty
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
-class VideoListModel(private val contentResolver: ContentResolver?) : ViewModel(){
-
+class VideoListViewModel(private val contentResolver: ContentResolver?) : ViewModel(){
+    private var allMedia:MutableList<VideoProperty>? = null
     private val _videoList = MutableLiveData<MutableList<VideoProperty>>()
     val videoList:LiveData<MutableList<VideoProperty>>
         get() = _videoList
 
-    fun getData(filterBy:String) {
-        Log.i("view model","view Model called ")
+    fun filter(filter:String){
+        when(filter){
+            "wp"->{
+                val list = allMedia?.filter { it.title.startsWith("VID-") }
+                _videoList.value = (list as MutableList<VideoProperty>?)!!
+            }
+            "movies"->{
+                val list = allMedia?.filter { it.duration.toLong()>4200 }
+                _videoList.value = (list as MutableList<VideoProperty>?)!!
+            }
+            "videos"->{
+                val list = allMedia?.filter { it.duration.toLong() in 91..179 }
+                _videoList.value = (list as MutableList<VideoProperty>?)!!
+            }
+            "sorts"->{
+                val list = allMedia?.filter { it.duration.toLong()<40&&!it.title.startsWith("VID-") }
+                _videoList.value = (list as MutableList<VideoProperty>?)!!
+            }
+            "all"->{
+                _videoList.value = allMedia!!
+            }
+        }
+    }
+    fun getData() {
         loadMedia()
     }
     private fun loadMedia()
@@ -64,7 +86,7 @@ class VideoListModel(private val contentResolver: ContentResolver?) : ViewModel(
                 {
                     val id = cursor.getLong(idColumn)
                     val name = cursor.getString(nameColumn)
-                    val duration = cursor.getInt(durationColumn)
+                    val duration = cursor.getInt(durationColumn)/1000 // changing value into seconds
                     val size = cursor.getInt(sizeColumn)
 
                     val contentUri:Uri = ContentUris.withAppendedId(
@@ -75,6 +97,7 @@ class VideoListModel(private val contentResolver: ContentResolver?) : ViewModel(
                     )
                 }
                 _videoList.value = list
+                allMedia = list
             }
         }
     }

@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         >
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/idMediaFilterChipGroup"
@@ -31,32 +33,36 @@
                 android:focusedByDefault="true"
                 />
             <com.google.android.material.chip.Chip
-                android:id="@+id/idFilterLatestAdded"
+                android:id="@+id/idFilterWhatsapp"
                 style="@style/ChipsTheme"
+                app:chipIconVisible="true"
+                app:chipIcon="@drawable/ic_whatsapp_iocn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Latest Added"
+                android:text="Whatsapp"
                 />
             <com.google.android.material.chip.Chip
-                android:id="@+id/idFilterByName"
+                android:id="@+id/idFilterMovies"
                 style="@style/ChipsTheme"
+                app:chipIconVisible="true"
+                app:chipIcon="@drawable/ic_movie_iocn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="By Name"
+                android:text="Movies"
                 />
             <com.google.android.material.chip.Chip
-                android:id="@+id/idFilterByDuration"
+                android:id="@+id/idFilterVideos"
                 style="@style/ChipsTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="By Duration"
+                android:text="Videos"
                 />
             <com.google.android.material.chip.Chip
-                android:id="@+id/idFilterBySize"
+                android:id="@+id/idFilterSortsVideos"
                 style="@style/ChipsTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="By Size"
+                android:text="Bing"
                 />
 
         </com.google.android.material.chip.ChipGroup>

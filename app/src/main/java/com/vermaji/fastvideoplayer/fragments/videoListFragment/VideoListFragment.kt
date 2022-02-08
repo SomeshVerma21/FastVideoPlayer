@@ -26,7 +26,7 @@ class VideoListFragment : Fragment() {
     private lateinit var binding:FragmentVideoListBinding
     private val REQUEST_CODE =1001
     private val PERMISSIONS = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
-    private lateinit var viewModel: VideoListModel
+    private lateinit var viewModel: VideoListViewModel
     private lateinit var filterChipGroup:ChipGroup
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -42,33 +42,34 @@ class VideoListFragment : Fragment() {
             when(checkedId){
                 R.id.idFilterAllMedia ->{
                     Toast.makeText(requireContext(),"All Media",Toast.LENGTH_SHORT).show()
-                    viewModel.getData("all")
+                    viewModel.filter("all")
                 }
-                R.id.idFilterByDuration ->{
-                    Toast.makeText(requireContext(),"By Duration",Toast.LENGTH_SHORT).show()
-                    viewModel.getData("duration")
+                R.id.idFilterWhatsapp ->{
+                    Toast.makeText(requireContext(),"Whatsapp videos",Toast.LENGTH_SHORT).show()
+                    viewModel.filter("wp")
                 }
-                R.id.idFilterByName ->{
-                    Toast.makeText(requireContext(),"By Name",Toast.LENGTH_SHORT).show()
-                    viewModel.getData("name")
+                R.id.idFilterMovies->{
+                    Toast.makeText(requireContext(),"Movies",Toast.LENGTH_SHORT).show()
+                    viewModel.filter("movies")
                 }
-                R.id.idFilterLatestAdded ->{
-                    Toast.makeText(requireContext(),"Latest Added",Toast.LENGTH_SHORT).show()
-                    viewModel.getData("latest")
+                R.id.idFilterVideos ->{
+                    Toast.makeText(requireContext(),"Videos",Toast.LENGTH_SHORT).show()
+                    viewModel.filter("videos")
                 }
-                R.id.idFilterBySize ->{
-                    Toast.makeText(requireContext(),"By Size",Toast.LENGTH_SHORT).show()
-                    viewModel.getData("size")
+                R.id.idFilterSortsVideos ->{
+                    Toast.makeText(requireContext(),"Sorts Videos",Toast.LENGTH_SHORT).show()
+                    viewModel.filter("sorts")
                 }
             }
         })
         val viewModelFactory = ViewModelFactory(activity?.contentResolver)
-        viewModel = ViewModelProvider(this,viewModelFactory).get(VideoListModel::class.java)
+        viewModel = ViewModelProvider(this,viewModelFactory).get(VideoListViewModel::class.java)
         viewModel.videoList.observe(viewLifecycleOwner, Observer {
             val mAdapter = viewModel.videoList.value?.let { it1 -> VideoItemAdapter(it1,
-                MediaClickListener { itemUri ->
+                MediaClickListener { item ->
                     val intent = Intent(activity,PlayerActivity::class.java)
-                    intent.putExtra("mediaUri",itemUri)
+                    intent.putExtra("mediaUri",item.uri)
+                    intent.putExtra("mediaName",item.title)
                     startActivity(intent)
                 }) }
             binding.idVideoRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -86,11 +87,12 @@ class VideoListFragment : Fragment() {
         }
     }
     private fun loadMedia(){
-        viewModel.getData("All")
+        viewModel.getData()
     }
 
     override fun onStart() {
         super.onStart()
+        filterChipGroup.check(R.id.idFilterAllMedia)
         checkPermission()
     }
 

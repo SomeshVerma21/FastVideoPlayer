@@ -1,5 +1,6 @@
 package com.vermaji.fastvideoplayer.fragments.adapters
 
+import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +28,7 @@ class VideoItemAdapter(private val list: MutableList<VideoProperty>,private val 
     class VideoItemViewHolder private constructor(private val binding: VideoItemsBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: VideoProperty,clickListener: MediaClickListener) {
             binding.videoData = item
+            binding.idMediaDuration.text = formatDuration(item.duration.toLong())
             val imageView = binding.imageView
             Glide.with(imageView.context).load(item.uri).placeholder(R.drawable.app_icon_312px).into(imageView)
             binding.clickListener = clickListener
@@ -42,10 +44,12 @@ class VideoItemAdapter(private val list: MutableList<VideoProperty>,private val 
         }
     }
 }
-class MediaClickListener(val clickListener:(itemUri:String)->Unit)
+class MediaClickListener(val clickListener:(item:VideoProperty)->Unit)
 {
-    fun onClick(media:String)
+    fun onClick(media:VideoProperty)
     {
         return clickListener(media)
     }
 }
+
+private fun formatDuration(seconds: Long): String = DateUtils.formatElapsedTime(seconds)
