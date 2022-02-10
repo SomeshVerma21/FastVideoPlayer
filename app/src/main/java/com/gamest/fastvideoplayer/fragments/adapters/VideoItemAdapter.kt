@@ -1,13 +1,13 @@
-package com.vermaji.fastvideoplayer.fragments.adapters
+package com.gamest.fastvideoplayer.fragments.adapters
 
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.vermaji.fastvideoplayer.R
-import com.vermaji.fastvideoplayer.databinding.VideoItemsBinding
-import com.vermaji.fastvideoplayer.media.VideoProperty
+import com.gamest.fastvideoplayer.R
+import com.gamest.fastvideoplayer.databinding.VideoItemsBinding
+import com.gamest.fastvideoplayer.media.VideoProperty
 
 class VideoItemAdapter(private val list: MutableList<VideoProperty>,private val clickListener: MediaClickListener)
     : RecyclerView.Adapter<VideoItemAdapter.VideoItemViewHolder>() {

@@ -1,4 +1,4 @@
-package com.vermaji.fastvideoplayer.fragments.videoListFragment
+package com.gamest.fastvideoplayer.fragments.videoListFragment
 
 import android.content.ContentResolver
 import android.content.ContentUris
@@ -10,7 +10,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vermaji.fastvideoplayer.media.VideoProperty
+import com.gamest.fastvideoplayer.media.VideoProperty
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 

@@ -5,11 +5,11 @@
     <data>
         <variable
             name="clickListener"
-            type="com.vermaji.fastvideoplayer.fragments.adapters.MediaClickListener"
+            type="com.gamest.fastvideoplayer.fragments.adapters.MediaClickListener"
             />
         <variable
             name="videoData"
-            type="com.vermaji.fastvideoplayer.media.VideoProperty" />
+            type="com.gamest.fastvideoplayer.media.VideoProperty" />
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

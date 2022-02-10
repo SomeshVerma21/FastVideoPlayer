@@ -18,7 +18,7 @@
         android:id="@+id/layout_header_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
         android:paddingTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:inputType="textMultiLine"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
             app:layout_constraintWidth_percent="0.9"
             android:text="Funny Anim Videos" />
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/cross_im"
+            android:id="@+id/ic_cross_close_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -62,7 +62,7 @@
     <ImageButton
         android:id="@+id/exo_rew"
         style="@style/ExoMediaButton.Rewind"
-        android:layout_marginRight="40dp"
+        android:layout_marginEnd="40dp"
         android:src="@drawable/ic_exo_reviend"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/exo_play"
@@ -72,7 +72,7 @@
     <ImageButton
         android:id="@+id/exo_ffwd"
         style="@style/ExoMediaButton.FastForward"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:src="@drawable/ic_exo_forword_icon"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/exo_play"
@@ -117,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@id/exo_position"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -135,25 +135,27 @@
             android:id="@+id/idDevider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:textColor="@color/white"
             android:textSize="14sp"
             tool:text="/"
+            android:layout_marginStart="10dp"
             app:layout_constraintStart_toEndOf="@id/exo_position"
             app:layout_constraintBottom_toTopOf="@+id/exo_progress"
             />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/exo_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:layout_marginStart="20dp"
             android:minWidth="50dp"
             android:textColor="@color/white"
             android:textSize="14sp"
-            tool:text="dssdd"
-            android:layout_marginStart="5dp"
-            app:layout_constraintStart_toEndOf="@id/idDevider"
             app:layout_constraintBottom_toTopOf="@+id/exo_progress"
-            />
+            app:layout_constraintStart_toEndOf="@id/idDevider"
+            tool:text="dssdd" />
 
         <com.google.android.exoplayer2.ui.DefaultTimeBar
             android:id="@+id/exo_progress"
@@ -172,11 +174,23 @@
             />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/exo_fullscreen"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:id="@+id/exo_rotateScreen"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:padding="3dp"
             android:src="@drawable/ic_exo_screen_rotation_icon"
             app:layout_constraintEnd_toEndOf="@id/videoTimeContainer"
+            app:layout_constraintBottom_toTopOf="@+id/exo_progress"
+            android:layout_marginEnd="12dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/exo_fullscreen"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_exo_full_screen"
+            app:layout_constraintEnd_toStartOf="@id/exo_rotateScreen"
             app:layout_constraintBottom_toTopOf="@+id/exo_progress"
             android:layout_marginEnd="12dp"
             />

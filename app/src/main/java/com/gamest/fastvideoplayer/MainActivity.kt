@@ -1,9 +1,8 @@
-package com.vermaji.fastvideoplayer
+package com.gamest.fastvideoplayer
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.vermaji.fastvideoplayer.fragments.videoListFragment.VideoListFragment
+import com.gamest.fastvideoplayer.fragments.videoListFragment.VideoListFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

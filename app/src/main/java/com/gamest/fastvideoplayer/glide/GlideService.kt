@@ -1,4 +1,4 @@
-package com.vermaji.fastvideoplayer.glide
+package com.gamest.fastvideoplayer.glide
 
 import android.os.Build
 import android.util.Size

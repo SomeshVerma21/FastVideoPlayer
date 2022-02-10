@@ -1,4 +1,4 @@
-package com.vermaji.fastvideoplayer
+package com.gamest.fastvideoplayer
 
 import org.junit.Test
 

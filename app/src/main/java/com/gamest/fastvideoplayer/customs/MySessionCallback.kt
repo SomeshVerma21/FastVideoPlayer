@@ -1,4 +1,4 @@
-package com.vermaji.fastvideoplayer.customs
+package com.gamest.fastvideoplayer.customs
 
 
 import android.support.v4.media.session.MediaSessionCompat

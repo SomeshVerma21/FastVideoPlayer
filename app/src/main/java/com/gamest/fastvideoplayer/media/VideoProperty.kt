@@ -1,4 +1,4 @@
-package com.vermaji.fastvideoplayer.media
+package com.gamest.fastvideoplayer.media
 
 data class VideoProperty(
         val title:String,

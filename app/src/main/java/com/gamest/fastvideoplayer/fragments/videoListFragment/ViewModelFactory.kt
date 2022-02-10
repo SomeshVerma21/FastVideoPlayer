@@ -1,4 +1,4 @@
-package com.vermaji.fastvideoplayer.fragments.videoListFragment
+package com.gamest.fastvideoplayer.fragments.videoListFragment
 
 import android.content.ContentResolver
 import androidx.lifecycle.ViewModel

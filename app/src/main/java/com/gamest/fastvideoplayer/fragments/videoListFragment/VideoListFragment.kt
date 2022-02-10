@@ -1,4 +1,4 @@
-package com.vermaji.fastvideoplayer.fragments.videoListFragment
+package com.gamest.fastvideoplayer.fragments.videoListFragment
 
 import android.Manifest
 import android.content.Intent
@@ -16,11 +16,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.chip.ChipGroup
-import com.vermaji.fastvideoplayer.PlayerActivity
-import com.vermaji.fastvideoplayer.R
-import com.vermaji.fastvideoplayer.databinding.FragmentVideoListBinding
-import com.vermaji.fastvideoplayer.fragments.adapters.MediaClickListener
-import com.vermaji.fastvideoplayer.fragments.adapters.VideoItemAdapter
+import com.gamest.fastvideoplayer.fragments.adapters.MediaClickListener
+import com.gamest.fastvideoplayer.fragments.adapters.VideoItemAdapter
+import com.gamest.fastvideoplayer.player.VideoPlayerActivity
+import com.gamest.fastvideoplayer.R
+import com.gamest.fastvideoplayer.databinding.FragmentVideoListBinding
 
 class VideoListFragment : Fragment() {
     private lateinit var binding:FragmentVideoListBinding
@@ -67,7 +67,7 @@ class VideoListFragment : Fragment() {
         viewModel.videoList.observe(viewLifecycleOwner, Observer {
             val mAdapter = viewModel.videoList.value?.let { it1 -> VideoItemAdapter(it1,
                 MediaClickListener { item ->
-                    val intent = Intent(activity,PlayerActivity::class.java)
+                    val intent = Intent(activity, VideoPlayerActivity::class.java)
                     intent.putExtra("mediaUri",item.uri)
                     intent.putExtra("mediaName",item.title)
                     startActivity(intent)

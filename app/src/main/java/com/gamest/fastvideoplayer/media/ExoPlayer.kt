@@ -1,4 +1,4 @@
-package com.vermaji.fastvideoplayer.media
+package com.gamest.fastvideoplayer.media
 
 import android.content.Context
 import com.google.android.exoplayer2.ExoPlayer
