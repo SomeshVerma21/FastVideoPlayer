@@ -25,6 +25,7 @@
         </activity>
         <activity
             android:name=".player.VideoPlayerActivity"
+            android:supportsPictureInPicture="true"
             android:configChanges="orientation|screenSize|layoutDirection"
             android:exported="false"
             android:screenOrientation="fullSensor"
