@@ -14,9 +14,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FastVideoPlayer">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.FastVideoPlayer">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".SplashScreenActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,10 +34,10 @@
         </activity>
         <activity
             android:name=".player.VideoPlayerActivity"
-            android:supportsPictureInPicture="true"
             android:configChanges="orientation|screenSize|layoutDirection"
             android:exported="false"
             android:screenOrientation="fullSensor"
+            android:supportsPictureInPicture="true"
             tools:ignore="AppLinkUrlError">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -41,8 +50,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
