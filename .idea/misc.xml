@@ -3,15 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/drawable/bg_round_rect_white_50.xml" value="0.1685" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/drawable/chip_shape.xml" value="0.1" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/drawable/choice_chip_selector.xml" value="0.1" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1685" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/drawable/round_shape_image.xml" value="0.1685" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/drawable/shape_corner_50_percent.xml" value="0.106" />
         <entry key="..\:/FastVideoPlayer/app/src/main/res/layout-v26/fragment_video_list.xml" value="0.25" />
-        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/activity_main.xml" value="0.12" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/activity_main.xml" value="0.20521590423257802" />
         <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/activity_player.xml" value="0.152" />
-        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/exo_player_controller.xml" value="0.152" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/activity_splash_screen.xml" value="0.20521590423257802" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/activity_video_player.xml" value="0.152" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/app_bar_main.xml" value="0.176" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/exo_player_controller.xml" value="0.176" />
         <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/fragment_player.xml" value="0.25416666666666665" />
         <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/fragment_video_list.xml" value="0.2" />
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/nav_header_main.xml" value="0.152" />
         <entry key="..\:/FastVideoPlayer/app/src/main/res/layout/video_items.xml" value="0.2" />
         <entry key="..\:/FastVideoPlayer/app/src/main/res/menu/top_app_bar.xml" value="0.2" />
+<<<<<<< HEAD
         <entry key="app/src/main/res/layout/activity_video_player.xml" value="0.3223958333333333" />
+=======
+        <entry key="..\:/FastVideoPlayer/app/src/main/res/xml/root_preferences.xml" value="0.20521590423257802" />
+>>>>>>> 1ea59802336897b23b7c940d947a66341b5d1f0d
       </map>
     </option>
   </component>

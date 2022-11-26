@@ -20,7 +20,11 @@
         <item name="strokeWidth">5dp</item>
         <item name="android:textColor">@color/chip_text_selector_color</item>
     </style>
-
+    <style name="VolumeSeekBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressBackgroundTint">@color/white</item>
+        <item name="android:progressTint">@color/primary</item>
+        <item name="android:thumbTint">@color/primary</item>
+    </style>
     <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
         <item name="cornerSize">50%</item>
     </style>

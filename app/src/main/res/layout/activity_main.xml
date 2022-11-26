@@ -5,12 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-    <include layout="@layout/app_bar_main"/>
+    tools:context=".mainUI.MainActivity">
+
+    <include layout="@layout/app_bar_main" />
+
     <FrameLayout
         android:id="@+id/idMainActivityContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
-        />
+        android:layout_marginTop="?attr/actionBarSize" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

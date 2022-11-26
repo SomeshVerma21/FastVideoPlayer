@@ -1,5 +1,9 @@
 package com.gamest.fastvideoplayer.presentation.video.components
 
+import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.text.format.DateUtils
 import android.util.Size
 import androidx.compose.foundation.Image
@@ -14,8 +18,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,11 +31,22 @@ import androidx.core.net.toUri
 import coil.compose.rememberAsyncImagePainter
 import com.gamest.fastvideoplayer.data.model.Video
 import com.gamest.fastvideoplayer.presentation.video.ui.theme.FastVideoPlayerTheme
+import com.gamest.fastvideoplayer.R
+import com.gamest.fastvideoplayer.player.VideoPlayerActivity
 
+
+fun getThumbnail(context:Context, uri:Uri) : Bitmap?{
+    return try {
+        context.contentResolver.loadThumbnail(uri, Size(480,320),null)
+    }catch (e:Exception){
+        null
+    }
+}
 
 @Composable
 fun WidgetVideoItem(videoItem: Video){
-    val image = LocalContext.current.contentResolver.loadThumbnail(videoItem.uri.toUri(), Size(480,320),null)
+    println("videoUri${videoItem.uri}")
+    val image = getThumbnail(LocalContext.current, videoItem.uri.toUri())
     val activity = LocalContext.current
     FastVideoPlayerTheme() {
         Box(
@@ -39,10 +56,10 @@ fun WidgetVideoItem(videoItem: Video){
                 .background(color = Color.LightGray, shape = RoundedCornerShape(5))
                 .border(width = 1.dp, color = Color.Gray, shape = RoundedCornerShape(5))
                 .clickable {
-//                    val intent = Intent(activity, VideoPlayerActivity::class.java)
-//                    intent.putExtra("mediaUri",videoItem.uri)
-//                    intent.putExtra("mediaName",videoItem.title)
-//                    activity.startActivity(intent)
+                    val intent = Intent(activity, VideoPlayerActivity::class.java)
+                    intent.putExtra("mediaUri",videoItem.uri)
+                    intent.putExtra("mediaName",videoItem.title)
+                    activity.startActivity(intent)
                 }
         ){
             Column(
@@ -55,7 +72,7 @@ fun WidgetVideoItem(videoItem: Video){
                         .height(180.dp)
                 ){
                     Image(
-                        painter = rememberAsyncImagePainter(model = image),
+                        painter = rememberAsyncImagePainter(model = image?:R.drawable.app_icon),
                         contentDescription = "thumbnail",
                         modifier = Modifier
                             .fillMaxWidth()

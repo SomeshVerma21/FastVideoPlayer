@@ -1,4 +1,4 @@
-package com.gamest.fastvideoplayer.fragments.adapters
+package com.gamest.fastvideoplayer.mainUI.videoList.adapters
 
 import android.text.format.DateUtils
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.gamest.fastvideoplayer.R
 import com.gamest.fastvideoplayer.databinding.VideoItemsBinding
-import com.gamest.fastvideoplayer.media.VideoProperty
+import com.gamest.fastvideoplayer.mainUI.models.VideoProperty
 
 class VideoItemAdapter(private val list: MutableList<VideoProperty>,private val clickListener: MediaClickListener)
     : RecyclerView.Adapter<VideoItemAdapter.VideoItemViewHolder>() {
@@ -25,7 +25,7 @@ class VideoItemAdapter(private val list: MutableList<VideoProperty>,private val 
     override fun getItemCount(): Int {
         return list.size
     }
-    class VideoItemViewHolder private constructor(private val binding: VideoItemsBinding): RecyclerView.ViewHolder(binding.root) {
+    class VideoItemViewHolder private constructor(private val binding: com.gamest.fastvideoplayer.databinding.VideoItemsBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: VideoProperty,clickListener: MediaClickListener) {
             binding.videoData = item
             binding.idMediaDuration.text = formatDuration(item.duration.toLong())

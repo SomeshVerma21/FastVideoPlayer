@@ -1,8 +1,9 @@
-package com.gamest.fastvideoplayer
+package com.gamest.fastvideoplayer.mainUI
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.gamest.fastvideoplayer.fragments.videoListFragment.VideoListFragment
+import com.gamest.fastvideoplayer.R
+import com.gamest.fastvideoplayer.mainUI.videoList.videoListFragment.VideoListFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
