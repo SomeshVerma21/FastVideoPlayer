@@ -1,4 +1,4 @@
-package com.gamest.fastvideoplayer.media
+package com.gamest.fastvideoplayer.mainUI.models
 
 data class VideoProperty(
         val title:String,

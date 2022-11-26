@@ -1,4 +1,4 @@
-package com.gamest.fastvideoplayer.fragments.videoListFragment
+package com.gamest.fastvideoplayer.mainUI.videoList.videoListFragment
 
 import android.Manifest
 import android.content.Intent
@@ -16,11 +16,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.chip.ChipGroup
-import com.gamest.fastvideoplayer.fragments.adapters.MediaClickListener
-import com.gamest.fastvideoplayer.fragments.adapters.VideoItemAdapter
+import com.gamest.fastvideoplayer.mainUI.videoList.adapters.MediaClickListener
+import com.gamest.fastvideoplayer.mainUI.videoList.adapters.VideoItemAdapter
 import com.gamest.fastvideoplayer.player.VideoPlayerActivity
-import com.gamest.fastvideoplayer.R
 import com.gamest.fastvideoplayer.databinding.FragmentVideoListBinding
+import com.gamest.fastvideoplayer.R
 
 class VideoListFragment : Fragment() {
     private lateinit var binding:FragmentVideoListBinding
@@ -28,6 +28,7 @@ class VideoListFragment : Fragment() {
     private val PERMISSIONS = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
     private lateinit var viewModel: VideoListViewModel
     private lateinit var filterChipGroup:ChipGroup
+    private lateinit var mAdapter:VideoItemAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -65,13 +66,14 @@ class VideoListFragment : Fragment() {
         val viewModelFactory = ViewModelFactory(activity?.contentResolver)
         viewModel = ViewModelProvider(this,viewModelFactory).get(VideoListViewModel::class.java)
         viewModel.videoList.observe(viewLifecycleOwner, Observer {
-            val mAdapter = viewModel.videoList.value?.let { it1 -> VideoItemAdapter(it1,
+            mAdapter = viewModel.videoList.value?.let { it1 -> VideoItemAdapter(it1,
                 MediaClickListener { item ->
                     val intent = Intent(activity, VideoPlayerActivity::class.java)
                     intent.putExtra("mediaUri",item.uri)
                     intent.putExtra("mediaName",item.title)
                     startActivity(intent)
-                }) }
+                }) }!!
+            mAdapter?.notifyDataSetChanged()
             binding.idVideoRecyclerView.layoutManager = LinearLayoutManager(context)
             binding.idVideoRecyclerView.adapter = mAdapter
         })
@@ -90,6 +92,9 @@ class VideoListFragment : Fragment() {
         viewModel.getData()
     }
 
+    override fun onStop() {
+        super.onStop()
+    }
     override fun onStart() {
         super.onStart()
         filterChipGroup.check(R.id.idFilterAllMedia)

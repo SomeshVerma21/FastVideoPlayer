@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.view.WindowManager
+import com.gamest.fastvideoplayer.mainUI.MainActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,7 @@ class SplashScreenActivity : AppCompatActivity() {
     private fun startActivity()
     {
         Handler().postDelayed(Runnable {
-           val intent = Intent(this,MainActivity::class.java)
+           val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         },3000)
