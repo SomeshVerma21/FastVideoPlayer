@@ -12,4 +12,7 @@
 /captures
 .externalNativeBuild
 .cxx
+.idea/vcs.xml
+.gitignore
+.idea/vcs.xml
 local.properties
