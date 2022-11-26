@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:onClick="@{()->clickListener.onClick(videoData)}"
             >
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageView"
