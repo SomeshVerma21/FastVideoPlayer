@@ -1,4 +1,4 @@
-package com.gamest.fastvideoplayer.fragments.videoListFragment
+package com.gamest.fastvideoplayer.mainUI.videoList.videoListFragment
 
 import android.content.ContentResolver
 import androidx.lifecycle.ViewModel

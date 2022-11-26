@@ -1,4 +1,4 @@
-package com.gamest.fastvideoplayer.fragments.settings
+package com.gamest.fastvideoplayer.mainUI.settings
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat

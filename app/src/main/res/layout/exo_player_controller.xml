@@ -12,8 +12,6 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_header_view"
         android:layout_width="0dp"
@@ -122,39 +120,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginStart="12dp"
             android:minWidth="50dp"
             android:textColor="@color/white"
             android:textSize="14sp"
-            tool:text="dssdd"
-            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/exo_progress"
             app:layout_constraintStart_toStartOf="@id/videoTimeContainer"
-            app:layout_constraintBottom_toTopOf="@+id/exo_progress"
-            />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/idDevider"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            tool:text="/"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toEndOf="@id/exo_position"
-            app:layout_constraintBottom_toTopOf="@+id/exo_progress"
-            />
+            app:layout_constraintTop_toTopOf="@+id/exo_progress"
+            tool:text="dssdd" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/exo_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginStart="20dp"
             android:minWidth="50dp"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/exo_progress"
-            app:layout_constraintStart_toEndOf="@id/idDevider"
+            app:layout_constraintBottom_toBottomOf="@+id/exo_progress"
+            app:layout_constraintEnd_toEndOf="@id/videoTimeContainer"
+            app:layout_constraintTop_toTopOf="@+id/exo_progress"
             tool:text="dssdd" />
 
         <com.google.android.exoplayer2.ui.DefaultTimeBar
@@ -165,23 +150,43 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             app:buffered_color="@color/white"
-            app:played_color="@color/primary"
+            app:layout_constraintEnd_toStartOf="@+id/exo_duration"
+            app:layout_constraintStart_toEndOf="@+id/exo_position"
+            app:layout_constraintTop_toTopOf="@id/videoTimeContainer"
+            app:played_color="@color/primaryVarient"
             app:scrubber_color="@color/primary"
-            app:unplayed_color="@color/white"
-            app:layout_constraintBottom_toBottomOf="@id/videoTimeContainer"
-            app:layout_constraintStart_toStartOf="@+id/videoTimeContainer"
-            app:layout_constraintEnd_toEndOf="@id/videoTimeContainer"
-            />
+            app:unplayed_color="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/audioOption"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_volume_on"
+            app:layout_constraintStart_toStartOf="@id/videoTimeContainer"
+            app:layout_constraintTop_toBottomOf="@+id/exo_progress" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/idVolumeSeekbar"
+            style="@style/VolumeSeekBar"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:progress="69"
+            android:layout_marginStart="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/audioOption"
+            app:layout_constraintStart_toEndOf="@id/audioOption"
+            app:layout_constraintTop_toTopOf="@+id/audioOption" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/exo_rotateScreen"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:padding="3dp"
+            android:padding="5dp"
             android:src="@drawable/ic_exo_screen_rotation_icon"
             app:layout_constraintEnd_toEndOf="@id/videoTimeContainer"
-            app:layout_constraintBottom_toTopOf="@+id/exo_progress"
-            android:layout_marginEnd="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/exo_progress"
+            android:layout_marginEnd="25dp"
             />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -191,7 +196,7 @@
             android:layout_marginRight="20dp"
             android:src="@drawable/ic_exo_full_screen"
             app:layout_constraintEnd_toStartOf="@id/exo_rotateScreen"
-            app:layout_constraintBottom_toTopOf="@+id/exo_progress"
+            app:layout_constraintTop_toBottomOf="@+id/exo_progress"
             android:layout_marginEnd="12dp"
             />
 

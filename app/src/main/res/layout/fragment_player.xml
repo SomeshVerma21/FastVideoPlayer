@@ -5,7 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.videoPlayerFragment.PlayerFragment">
+        tools:context=".mainUI.videoList.videoPlayerFragment.PlayerFragment">
         <VideoView
             android:id="@+id/idVideoView"
             android:orientation="horizontal"
