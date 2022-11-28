@@ -118,3 +118,12 @@ sealed class BottomNavItem(var title:String, icon: @Composable () -> Unit, var r
 //    object Favorite: BottomNavItem("Favorite", icon = { Icon(Icons.Filled.Home, contentDescription = "Favorite") }, "favorite")
 //    object Profile: BottomNavItem("Profile", icon = { Icon(Icons.Filled.Home, contentDescription = "Profile") }, "profile")
 }
+
+sealed class FilterBy(var id:Int, var title: String){
+    object All : FilterBy(0, "All")
+    object Movie: FilterBy(1, "Movie")
+    object WebSeries: FilterBy(2, "Web Series")
+    object Videos: FilterBy(3, "Videos")
+    object WhatsApp: FilterBy(4, "Whatsapp")
+    object Bing: FilterBy(5, "Bing")
+}

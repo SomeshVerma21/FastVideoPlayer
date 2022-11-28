@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.gamest.fastvideoplayer.customs.Resource
 import com.gamest.fastvideoplayer.data.model.Video
 import com.gamest.fastvideoplayer.presentation.VideoQueryUseCase
+import com.gamest.fastvideoplayer.presentation.navigation.FilterBy
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -17,6 +18,8 @@ import javax.inject.Inject
 class VideoViewModel @Inject constructor(
     private val videoQueryUseCase: VideoQueryUseCase
 ) : ViewModel() {
+    private val _isLoading = mutableStateOf(false)
+    val isLoading:State<Boolean> = _isLoading
     private val _state = mutableStateOf<List<Video>>(emptyList())
     val state:State<List<Video>> = _state
     init {
@@ -24,20 +27,46 @@ class VideoViewModel @Inject constructor(
     }
 
     private fun getList(){
-        println("calling")
         videoQueryUseCase().onEach { result ->
-            println("ssss$result")
             when(result){
                 is Resource.Loading ->{
+                    _isLoading.value = true
                     _state.value = emptyList()
                 }
                 is Resource.Success ->{
-                    _state.value = result.data ?: emptyList()
+                    _isLoading.value = false
+                    _state.value = result.data ?: emptyList<Video>().also { it ->
+                        it.filter { it.title.startsWith("VID") }
+                    }
                 }
                 is Resource.Error -> {
+                    _isLoading.value = false
                     _state.value = emptyList()
                 }
             }
         }.launchIn(viewModelScope)
     }
+
+//    fun filterItems(filterBy: FilterBy){
+//        when(filterBy){
+//            FilterBy.All -> {
+//                getList()
+//            }
+//            FilterBy.Movie -> {
+//
+//            }
+//            FilterBy.Videos -> {
+//
+//            }
+//            FilterBy.WebSeries -> {
+//
+//            }
+//            FilterBy.WhatsApp -> {
+//
+//            }
+//            FilterBy.Bing -> {
+//
+//            }
+//        }
+//    }
 }

@@ -59,12 +59,10 @@ class VideoPlayerActivity : AppCompatActivity() {
     {
         initializePlayer()
         findViewById<ImageView>(R.id.exo_rotateScreen).setOnClickListener {
-            Toast.makeText(this,"Rotate Screen ", Toast.LENGTH_SHORT).show()
             setOrientation()
         }
 
         findViewById<ImageView>(R.id.exo_fullscreen).setOnClickListener {
-            Toast.makeText(this,"Full Screen",Toast.LENGTH_SHORT).show()
             when(currentMode){
                 0->{findViewById<PlayerView>(R.id.idVideoPlayerView).resizeMode = resignedMode[1]
                     currentMode++
