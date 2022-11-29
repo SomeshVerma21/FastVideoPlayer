@@ -19,10 +19,8 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.graphics.translationMatrix
 import androidx.navigation.NavHostController
 import com.gamest.fastvideoplayer.R
 import com.gamest.fastvideoplayer.presentation.video.screens.isScrollingDown

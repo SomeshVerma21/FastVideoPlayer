@@ -47,8 +47,8 @@ fun HomeContentLoading(){
                                     Color.LightGray,
                                     Color.Gray
                                 ),
-                                start = Offset(offset, offset),
-                                end = Offset(offset + 1500f, offset + 800),
+                                start = Offset.Zero,
+                                end = Offset(offset + 1000f, offset + 800),
                                 tileMode = TileMode.Mirror
                             ),
                             shape = RoundedCornerShape(10)

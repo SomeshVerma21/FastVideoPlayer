@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.MaterialTheme
@@ -51,7 +52,7 @@ class HomeActivity : ComponentActivity() {
 fun MyApp(){
     val state = rememberScaffoldState()
     val navController = rememberNavController()
-    var lazyListState = rememberLazyListState()
+    val lazyListState = rememberLazyListState()
     Scaffold(
         scaffoldState = state,
 //        drawerContent = { LeftDrawer() },

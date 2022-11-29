@@ -1,7 +1,6 @@
 package com.gamest.fastvideoplayer.presentation.video.components
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.text.format.DateUtils
@@ -9,7 +8,6 @@ import android.util.Size
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -32,10 +30,7 @@ import androidx.core.net.toUri
 import coil.compose.rememberAsyncImagePainter
 import com.gamest.fastvideoplayer.R
 import com.gamest.fastvideoplayer.data.model.Video
-import com.gamest.fastvideoplayer.player.VideoPlayerActivity
 import com.gamest.fastvideoplayer.presentation.video.ui.theme.FastVideoPlayerTheme
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 
 fun getThumbnail(context:Context, uri:Uri) : Bitmap?{
@@ -53,7 +48,7 @@ fun WidgetVideoItem(
 ){
     println("videoUri${videoItem.uri}")
     val activity = LocalContext.current
-    FastVideoPlayerTheme() {
+    FastVideoPlayerTheme {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
