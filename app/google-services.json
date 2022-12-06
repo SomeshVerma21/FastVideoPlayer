@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "596273059545",
+    "project_id": "player-app-bec5d",
+    "storage_bucket": "player-app-bec5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596273059545:android:0de158b4b360023da990c8",
+        "android_client_info": {
+          "package_name": "com.gamest.fastvideoplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596273059545-c61mksheu5j5pi8331inisgr6vuhbtuc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuAnXTYP7VgEc9i2Oy1wRUPE923cHA1Oc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596273059545-c61mksheu5j5pi8331inisgr6vuhbtuc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

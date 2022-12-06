@@ -2,7 +2,7 @@ package com.gamest.fastvideoplayer.di
 
 import android.app.Application
 import com.gamest.fastvideoplayer.data.repo.VideoMediaRepoImpl
-import com.gamest.fastvideoplayer.domain.repo.VideoMediaRepo
+import com.gamest.fastvideoplayer.domain.home.repo.VideoMediaRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +16,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideVideoMediaRepo(application: Application) : VideoMediaRepo{
+    fun provideVideoMediaRepo(application: Application) : VideoMediaRepo {
         return VideoMediaRepoImpl(application)
     }
 }

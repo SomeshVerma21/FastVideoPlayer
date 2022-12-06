@@ -7,14 +7,14 @@ import android.os.Build
 import android.provider.MediaStore
 import android.util.Log
 import com.gamest.fastvideoplayer.data.model.Video
-import com.gamest.fastvideoplayer.domain.repo.VideoMediaRepo
+import com.gamest.fastvideoplayer.domain.home.repo.VideoMediaRepo
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class VideoMediaRepoImpl @Inject constructor(
     private val application: Application,
     private var mediaVideos: List<Video> = emptyList()
-    ) : VideoMediaRepo{
+    ) : VideoMediaRepo {
     init {
         loadMedia()
     }

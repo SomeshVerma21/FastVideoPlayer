@@ -16,7 +16,7 @@
         android:theme="@style/Theme.FastVideoPlayer"
         tools:ignore="ExtraText">
         <activity
-            android:name=".presentation.video.HomeActivity"
+            android:name=".presentation.home.HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.FastVideoPlayer">
