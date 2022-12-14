@@ -19,11 +19,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
-import com.gamest.fastvideoplayer.presentation.home.navigation.BottomNav
-import com.gamest.fastvideoplayer.presentation.home.navigation.NavigationGraph
 import com.gamest.fastvideoplayer.presentation.home.media.components.AppBar
 import com.gamest.fastvideoplayer.presentation.home.media.ui.theme.FastVideoPlayerTheme
 import com.gamest.fastvideoplayer.presentation.home.media.viewModel.MediaViewModel
+import com.gamest.fastvideoplayer.presentation.home.navigation.BottomNav
+import com.gamest.fastvideoplayer.presentation.home.navigation.NavigationGraph
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,6 +42,11 @@ class HomeActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+
     }
 }
 

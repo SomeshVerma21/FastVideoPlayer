@@ -5,6 +5,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -30,7 +32,6 @@ import coil.compose.rememberAsyncImagePainter
 import com.gamest.fastvideoplayer.R
 import com.gamest.fastvideoplayer.presentation.home.media.ui.theme.FastVideoPlayerTheme
 
-
 @Composable
 @Preview
 fun PreviewApp(){
@@ -50,6 +51,7 @@ fun PreviewApp(){
         }
     }
 }
+
 
 @Composable
 fun MusicScreen(){
@@ -71,7 +73,60 @@ fun MusicScreen(){
     }
 }
 
+data class Item(
+    val id:String,
+    val title:String,
+    val author:String,
+    val duration:String
+)
 
+@Composable
+@Preview
+fun ContentScreen(){
+    val items = listOf<Item>(
+        Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
+        Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
+        Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
+        Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
+        Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
+        Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
+        Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
+        Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
+    )
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.White)
+    ){
+        LazyColumn(
+            modifier = Modifier.fillMaxSize()
+        ){
+            items(items = items) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(60.dp)
+                        .background(color = Color.Red)
+                        .padding(10.dp)
+                ){
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Image(painter = painterResource(id = R.drawable.thumbnail), contentDescription = "small icon")
+                        Row(
+                            modifier = Modifier
+                        ) {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 
 @Composable
