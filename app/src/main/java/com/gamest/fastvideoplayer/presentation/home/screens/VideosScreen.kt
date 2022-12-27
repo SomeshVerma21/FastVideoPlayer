@@ -30,7 +30,6 @@ fun Videos(lazyListState: LazyListState){
         val openDialog = remember {
             mutableStateOf(false)
         }
-
         Column {
             Selector(
                 onFilterSelect = {
@@ -133,9 +132,7 @@ fun Selector(
         it[4] = "WhatsApp"
         it[5] = "Bing"
     }
-
     val current = mutableStateOf(0)
-
     LazyRow(
         modifier = Modifier.fillMaxWidth()
     ){

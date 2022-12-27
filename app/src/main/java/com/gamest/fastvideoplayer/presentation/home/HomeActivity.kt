@@ -33,7 +33,6 @@ class HomeActivity : ComponentActivity() {
         setContent {
             val viewModel = hiltViewModel<MediaViewModel>()
             FastVideoPlayerTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
@@ -44,10 +43,6 @@ class HomeActivity : ComponentActivity() {
         }
     }
 
-    override fun onStop() {
-        super.onStop()
-
-    }
 }
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")

@@ -1,5 +1,6 @@
 package com.gamest.fastvideoplayer.presentation.home.screens
 
+import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
@@ -33,7 +35,7 @@ import com.gamest.fastvideoplayer.R
 import com.gamest.fastvideoplayer.presentation.home.media.ui.theme.FastVideoPlayerTheme
 
 @Composable
-@Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO or Configuration.UI_MODE_TYPE_NORMAL)
 fun PreviewApp(){
     FastVideoPlayerTheme {
         Box(
@@ -83,7 +85,7 @@ data class Item(
 @Composable
 @Preview
 fun ContentScreen(){
-    val items = listOf<Item>(
+    val items = listOf(
         Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
         Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
         Item(id = "1111", title = "sdfjldsjfs", author = "sdlfjldsfj", duration = "sldfjlsdjf"),
@@ -106,7 +108,7 @@ fun ContentScreen(){
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(60.dp)
-                        .background(color = Color.Red)
+                        .background(color = Color.Gray)
                         .padding(10.dp)
                 ){
                     Row(
@@ -116,11 +118,7 @@ fun ContentScreen(){
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Image(painter = painterResource(id = R.drawable.thumbnail), contentDescription = "small icon")
-                        Row(
-                            modifier = Modifier
-                        ) {
-
-                        }
+                        Text(text = "Title answering ")
                     }
                 }
             }
@@ -209,7 +207,6 @@ fun PlayerExtended(){
                                 .shadow(10.dp, RoundedCornerShape(10))
                                 .padding(top = 20.dp)
                         )
-
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -244,7 +241,7 @@ fun PlayerExtended(){
                                     .padding(10.dp)
                             ){
                                 Image(
-                                    painter = rememberAsyncImagePainter(model = R.drawable.next),
+                                    painter = painterResource(R.drawable.next),
                                     contentDescription = "",
                                     modifier = Modifier
                                         .size(30.dp)
@@ -261,7 +258,7 @@ fun PlayerExtended(){
                                     .padding(10.dp)
                             ){
                                 Image(
-                                    painter = rememberAsyncImagePainter(model = R.drawable.play_button),
+                                    painter = painterResource(R.drawable.play_button),
                                     contentDescription = "",
                                     modifier = Modifier.size(30.dp)
                                 )
@@ -275,7 +272,7 @@ fun PlayerExtended(){
                                     .padding(10.dp)
                             ){
                                 Image(
-                                    painter = rememberAsyncImagePainter(model = R.drawable.next),
+                                    painter = painterResource(R.drawable.next),
                                     contentDescription = "",
                                     modifier = Modifier.size(30.dp)
                                 )
@@ -315,7 +312,7 @@ fun PlayerExtended(){
                             .padding(10.dp)
                     ){
                         Image(
-                            painter = rememberAsyncImagePainter(model = R.drawable.next),
+                            painter = painterResource(R.drawable.next),
                             contentDescription = "",
                             modifier = Modifier
                                 .size(30.dp)
@@ -332,7 +329,7 @@ fun PlayerExtended(){
                             .padding(5.dp)
                     ){
                         Image(
-                            painter = rememberAsyncImagePainter(model = R.drawable.play_button),
+                            painter = painterResource(R.drawable.play_button),
                             contentDescription = "",
                             modifier = Modifier.size(30.dp)
                         )
@@ -346,7 +343,7 @@ fun PlayerExtended(){
                             .padding(10.dp)
                     ){
                         Image(
-                            painter = rememberAsyncImagePainter(model = R.drawable.next),
+                            painter = painterResource(R.drawable.next),
                             contentDescription = "",
                             modifier = Modifier.size(30.dp)
                         )
